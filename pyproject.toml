@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lcd-display"
+version = "0.1.0"
+description = "Modular 16x2 LCD display manager (VU meter, Niri window, …)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pyserial>=3.5",
+  "sounddevice>=0.4.6",
+  "numpy>=1.24",
+  "psutil>=5.9",
+]
+
+[project.scripts]
+lcd-display = "lcd_display.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["lcd_display*"]
